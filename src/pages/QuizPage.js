@@ -4,18 +4,23 @@ import QuizQuestion from '../components/QuizQuestion';
 import QuizSummary from '../components/QuizSummary';
 import ProgressBar from '../components/ProgressBar';
 
-// Sample quiz data
 const quizzes = {
-  1: [
-    { text: 'What is the capital of France?', answers: ['Paris', 'London', 'Berlin', 'Madrid'], correct: 'Paris' },
-    { text: 'What is 2 + 2?', answers: ['3', '4', '5', '6'], correct: '4' }
-  ],
-  2: [
-    { text: 'What planet is known as the Red Planet?', answers: ['Earth', 'Mars', 'Jupiter', 'Saturn'], correct: 'Mars' },
-    { text: 'What is the chemical symbol for water?', answers: ['H2O', 'CO2', 'O2', 'NaCl'], correct: 'H2O' }
-  ]
-};
-
+    1: [ // General Knowledge
+      { text: 'What is the capital of Italy?', answers: ['Rome', 'Paris', 'Berlin', 'Madrid'], correct: 'Rome' },
+      { text: 'Which color do you get by mixing red and white?', answers: ['Pink', 'Purple', 'Orange', 'Brown'], correct: 'Pink' },
+      { text: 'What is the largest continent by land area?', answers: ['Asia', 'Africa', 'Europe', 'North America'], correct: 'Asia' },
+      { text: 'Which planet is known as the Blue Planet?', answers: ['Earth', 'Mars', 'Neptune', 'Uranus'], correct: 'Earth' },
+      { text: 'What is the main ingredient in guacamole?', answers: ['Avocado', 'Tomato', 'Pepper', 'Onion'], correct: 'Avocado' }
+    ],
+    2: [ // Science
+      { text: 'What gas do plants use for photosynthesis?', answers: ['Carbon Dioxide', 'Oxygen', 'Nitrogen', 'Hydrogen'], correct: 'Carbon Dioxide' },
+      { text: 'How many bones are there in the human body?', answers: ['206', '195', '210', '220'], correct: '206' },
+      { text: 'What is the boiling point of water?', answers: ['100°C', '90°C', '110°C', '80°C'], correct: '100°C' },
+      { text: 'What planet is known for its rings?', answers: ['Saturn', 'Jupiter', 'Mars', 'Venus'], correct: 'Saturn' },
+      { text: 'What is the chemical symbol for gold?', answers: ['Au', 'Ag', 'Fe', 'Pb'], correct: 'Au' }
+    ]
+  };
+  
 const QuizPage = () => {
   const { quizId } = useParams();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
