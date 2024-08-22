@@ -1,34 +1,35 @@
 import React, { useState } from 'react';
 
-const QuizQuestion = ({ question, onAnswer }) => {
+const QuizQuestion = ({ question, onAnswer, currentQuestion, totalQuestions }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-  const handleAnswerChange = (event) => {
-    setSelectedAnswer(event.target.value);
-  };
-
   const handleSubmit = () => {
-    onAnswer(selectedAnswer);
+    if (selectedAnswer !== null) {
+      onAnswer(selectedAnswer);
+    } else {
+      alert('Please select an answer before proceeding.');
+    }
   };
 
   return (
-    <div>
-      <h2>{question.text}</h2>
-      <form>
-        {question.answers.map((answer, index) => (
-          <div key={index}>
-            <input
-              type="radio"
-              name="answer"
-              value={answer}
-              checked={selectedAnswer === answer}
-              onChange={handleAnswerChange}
-            />
-            <label>{answer}</label>
-          </div>
-        ))}
-      </form>
-      <button onClick={handleSubmit}>Submit</button>
+    <div className="quiz-question">
+      <h3>{`Question ${currentQuestion + 1} of ${totalQuestions}`}</h3>
+      <p>{question.text}</p>
+      {question.options.map((option, index) => (
+        <label key={index}>
+          <input
+            type="radio"
+            name="answer"
+            value={index}
+            onChange={() => setSelectedAnswer(index)}
+            checked={selectedAnswer === index}
+          />
+          {option}
+        </label>
+      ))}
+      <div className="navigation-buttons">
+        <button onClick={handleSubmit}>Next</button>
+      </div>
     </div>
   );
 };

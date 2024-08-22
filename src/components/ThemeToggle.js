@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
-import { lightTheme, darkTheme } from '../theme';
-import styled, { ThemeProvider } from 'styled-components';
+import React from 'react';
 
-const ToggleButton = styled.button`
-  margin: 10px;
-`;
-
-const ThemeToggle = ({ toggleTheme }) => {
+const ThemeToggle = ({ toggleTheme, theme }) => {
   return (
-    <ToggleButton onClick={toggleTheme}>
-      Toggle Theme
-    </ToggleButton>
+    <button onClick={toggleTheme} className="theme-toggle">
+      {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+    </button>
   );
 };
 

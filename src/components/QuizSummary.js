@@ -1,10 +1,11 @@
 import React from 'react';
 
-const QuizSummary = ({ score, total }) => {
+const QuizSummary = ({ score, totalQuestions, onRestart }) => {
   return (
-    <div>
-      <h2>Quiz Completed!</h2>
-      <p>Your Score: {score} / {total}</p>
+    <div className="quiz-summary">
+      <h2>Quiz Completed</h2>
+      <p>{`Your score is ${score} out of ${totalQuestions}`}</p>
+      <button onClick={onRestart}>Restart Quiz</button>
     </div>
   );
 };
