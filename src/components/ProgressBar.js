@@ -5,9 +5,7 @@ const ProgressBar = ({ current, total }) => {
 
   return (
     <div className="progress-bar">
-      <div className="progress" style={{ width: `${progress}%` }}>
-        {current}/{total}
-      </div>
+      <div className="progress" style={{ width: `${progress}%` }}></div>
     </div>
   );
 };
