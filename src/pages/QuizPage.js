@@ -23,7 +23,7 @@ const QuizPage = ({ quiz, onRestart }) => {
           const isCorrect = currentQuestion.correctAnswer.every(answer => newSelections.includes(answer));
           setIsAnswerCorrect(isCorrect);
         } else {
-          setIsAnswerCorrect(null); // Reset correctness while selecting
+          setIsAnswerCorrect(null); 
         }
 
         return newSelections;
@@ -35,7 +35,11 @@ const QuizPage = ({ quiz, onRestart }) => {
   };
 
   const handleNext = () => {
-    // Update score if the answer is correct
+    if (selectedOptions.length === 0) {
+      alert('Please select an option before proceeding.');
+      return;
+    }
+
     if (isAnswerCorrect) {
       setScore(score + 1);
     }
@@ -43,8 +47,8 @@ const QuizPage = ({ quiz, onRestart }) => {
     const nextQuestionIndex = currentQuestionIndex + 1;
     if (nextQuestionIndex < quiz.questions.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
-      setSelectedOptions([]); // Clear selections for the next question
-      setIsAnswerCorrect(null); // Reset correctness for the next question
+      setSelectedOptions([]); 
+      setIsAnswerCorrect(null); 
     } else {
       setIsCompleted(true);
     }
@@ -53,8 +57,8 @@ const QuizPage = ({ quiz, onRestart }) => {
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
-      setSelectedOptions([]); // Clear selections when navigating back
-      setIsAnswerCorrect(null); // Reset correctness when navigating back
+      setSelectedOptions([]); 
+      setIsAnswerCorrect(null); 
     }
   };
 
@@ -102,7 +106,7 @@ const QuizPage = ({ quiz, onRestart }) => {
             <button
               className="next-button"
               onClick={handleNext}
-              disabled={isMultipleChoice && isAnswerCorrect === null}
+              disabled={selectedOptions.length === 0}
             >
               Next
             </button>
