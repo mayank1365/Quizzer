@@ -1,6 +1,6 @@
-# Quiz App
+# Quizzer
 
-Welcome to the Quiz App! This interactive and engaging web application allows users to take quizzes with various question types, including multiple-choice and single-choice questions. The app provides a smooth user experience with features like progress tracking, question navigation, and a final score display.
+Welcome to the Quizzer! This interactive and engaging web application allows users to take quizzes with various question types, including multiple-choice and single-choice questions. The app provides a smooth user experience with features like progress tracking, question navigation, and a final score display.
 
 ## Table of Contents
 
