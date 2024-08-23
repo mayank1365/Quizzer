@@ -11,3 +11,4 @@ const ProgressBar = ({ current, total }) => {
 };
 
 export default ProgressBar;
+

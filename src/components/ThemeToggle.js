@@ -9,3 +9,4 @@ const ThemeToggle = ({ toggleTheme, theme }) => {
 };
 
 export default ThemeToggle;
+

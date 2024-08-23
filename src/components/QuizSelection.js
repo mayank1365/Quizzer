@@ -14,3 +14,4 @@ const QuizSelection = ({ quizzes, onSelect }) => {
 };
 
 export default QuizSelection;
+

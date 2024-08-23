@@ -11,3 +11,4 @@ const QuizSummary = ({ score, totalQuestions, onRestart }) => {
 };
 
 export default QuizSummary;
+

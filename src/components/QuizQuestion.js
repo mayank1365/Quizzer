@@ -35,3 +35,4 @@ const QuizQuestion = ({ question, onAnswer, currentQuestion, totalQuestions }) =
 };
 
 export default QuizQuestion;
+

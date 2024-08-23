@@ -125,3 +125,4 @@ const QuizPage = ({ quiz, onRestart }) => {
 };
 
 export default QuizPage;
+

@@ -10,3 +10,4 @@ const HomePage = ({ quizzes, onSelectQuiz }) => {
 };
 
 export default HomePage;
+
